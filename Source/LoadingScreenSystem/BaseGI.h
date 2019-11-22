@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "Engine.h"
 #include "BaseGI.generated.h"
 
 /**
@@ -16,12 +17,20 @@ class LOADINGSCREENSYSTEM_API UBaseGI : public UGameInstance
 
 
 public:
-	/*Экран загрузки*/
+	virtual void Init() override;
+
+	UFUNCTION()
+		virtual void BeginLoadingScreen(const FString& MapName);
+	UFUNCTION()
+		virtual void EndLoadingScreen(UWorld* InLoadedWorld);
+
+
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "LoadingScreen")
 		bool bAutoCompleteWhenLoadingCompletes = false;							/** если это правда, загрузочный экран исчезнет, как только все фильмы, играли и загрузка не выполняется. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "LoadingScreen")
 		bool bMoviesAreSkippable = true;										/** если это правда, фильмы можно пропустить, нажав на экран загрузки как загрузка происходит. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "LoadingScreen")
-		FString MovieName = "Logo";
+		FString MovieName = "Video_2";
 	
 };
