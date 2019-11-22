@@ -1,5 +1,12 @@
-# Object file
-*.o
-
-# Ada Library Information
-*.ali
+Saved/
+Intermediate/
+Build/
+Binaries/
+ipch/
+.vs/ProjectHobo/*
+.vs
+*.suo
+LoadingScreenSystem.VC.VC.opendb
+LoadingScreenSystem.VC.db
+LoadingScreenSystem.sln
+desktop.ini
